@@ -28,7 +28,7 @@ const ReportsDashboard = () => {
         <Header />
 
         <div className="p-2 bg-white shadow-md rounded-md">
-          <h2 className="text-xl font-bold text-green-800 mb-4">
+          <h2 className="text-xl font-bold text-blue-800 mb-4">
             Reports Dashboard
           </h2>
 
@@ -37,10 +37,10 @@ const ReportsDashboard = () => {
               <div
                 key={index}
                 onClick={() => navigate(report.route)}
-                className="cursor-pointer flex flex-col items-center justify-center p-6 bg-green-50 border border-green-300 rounded-lg shadow hover:bg-green-100 transition text-center"
+                className="cursor-pointer flex flex-col items-center justify-center p-6 bg-blue-50 border border-blue-300 rounded-lg shadow hover:bg-blue-100 transition text-center"
               >
                 <div className="text-4xl mb-2">{report.icon}</div>
-                <div className="font-semibold text-green-800">{report.name}</div>
+                <div className="font-semibold text-blue-800">{report.name}</div>
               </div>
             ))}
           </div>

@@ -27,10 +27,10 @@ const DailyCollectionUser = () => {
         <Header />
 
         <div className="p-2 bg-white shadow-md rounded-md">
-          {/* Green Title Bar */}
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          {/* blue Title Bar */}
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold text-green-800">
+              <h2 className="text-xl font-bold text-blue-800">
                 Daily Collection (User-wise)
               </h2>
                 {/* Buttons: Back + Dashboard */}
@@ -38,7 +38,7 @@ const DailyCollectionUser = () => {
                 <BackButton />
                 <button
                   onClick={() => navigate("/ReportsDashboard")}
-                  className="flex items-center px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                  className="flex items-center px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                   title="Reports Dashboard"
                 >
                   <FaThLarge />
@@ -49,29 +49,29 @@ const DailyCollectionUser = () => {
 
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full table-auto border border-green-500">
-              <thead className="bg-green-100 text-sm">
+            <table className="w-full table-auto border border-blue-500">
+              <thead className="bg-blue-100 text-sm">
                 <tr>
-                  <th className="border border-green-500 px-2 py-1">Date</th>
-                  <th className="border border-green-500 px-2 py-1">Collected By</th>
-                  <th className="border border-green-500 px-2 py-1">Students Paid</th>
-                  <th className="border border-green-500 px-2 py-1">Amount Collected</th>
+                  <th className="border border-blue-500 px-2 py-1">Date</th>
+                  <th className="border border-blue-500 px-2 py-1">Collected By</th>
+                  <th className="border border-blue-500 px-2 py-1">Students Paid</th>
+                  <th className="border border-blue-500 px-2 py-1">Amount Collected</th>
                 </tr>
               </thead>
               <tbody className="text-sm text-center">
                 {data.length > 0 ? (
                   data.map((d, i) => (
                     <tr key={i} className="hover:bg-gray-100 transition">
-                      <td className="border border-green-500 px-2 py-1">
+                      <td className="border border-blue-500 px-2 py-1">
                         {new Date(d.date).toLocaleDateString("en-GB", {
                           day: "2-digit",
                           month: "short",
                           year: "numeric",
                         })}
                       </td>
-                      <td className="border border-green-500 px-2 py-1">{d.collectedBy}</td>
-                      <td className="border border-green-500 px-2 py-1">{d.students}</td>
-                      <td className="border border-green-500 px-2 py-1">₹{d.totalAmount}</td>
+                      <td className="border border-blue-500 px-2 py-1">{d.collectedBy}</td>
+                      <td className="border border-blue-500 px-2 py-1">{d.students}</td>
+                      <td className="border border-blue-500 px-2 py-1">₹{d.totalAmount}</td>
                     </tr>
                   ))
                 ) : (

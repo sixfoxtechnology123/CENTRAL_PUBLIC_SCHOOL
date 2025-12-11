@@ -58,9 +58,9 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
         <Header />
 
         <div className="p-2 bg-white shadow-md rounded-md">
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
             <div className="flex justify-between items-center flex-wrap gap-2">
-              <h2 className="text-xl font-bold text-green-800">Outstanding Fees</h2>
+              <h2 className="text-xl font-bold text-blue-800">Outstanding Fees</h2>
               <div className="flex items-center gap-2">
                 <BackButton />
                 <input
@@ -72,7 +72,7 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
                 />
                 <button
                   onClick={() => navigate("/ReportsDashboard")}
-                  className="flex items-center px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                  className="flex items-center px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                   title="Reports Dashboard"
                 >
                   <FaThLarge />
@@ -123,30 +123,30 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
 
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full table-auto border border-green-500">
-              <thead className="bg-green-100 text-sm">
+            <table className="w-full table-auto border border-blue-500">
+              <thead className="bg-blue-100 text-sm">
                 <tr>
-                  <th className="border border-green-500 px-2 py-1">SL No</th>
-                  <th className="border border-green-500 px-2 py-1">Student ID</th>
-                  <th className="border border-green-500 px-2 py-1">Student Name</th>
-                  <th className="border border-green-500 px-2 py-1">Class</th>
-                  <th className="border border-green-500 px-2 py-1">Section</th>
-                  <th className="border border-green-500 px-2 py-1">Roll Number</th>
-                  <th className="border border-green-500 px-2 py-1">Pending Fee Amount</th>
-                  <th className="border border-green-500 px-2 py-1">Action</th>
+                  <th className="border border-blue-500 px-2 py-1">SL No</th>
+                  <th className="border border-blue-500 px-2 py-1">Student ID</th>
+                  <th className="border border-blue-500 px-2 py-1">Student Name</th>
+                  <th className="border border-blue-500 px-2 py-1">Class</th>
+                  <th className="border border-blue-500 px-2 py-1">Section</th>
+                  <th className="border border-blue-500 px-2 py-1">Roll Number</th>
+                  <th className="border border-blue-500 px-2 py-1">Pending Fee Amount</th>
+                  <th className="border border-blue-500 px-2 py-1">Action</th>
                 </tr>
               </thead>
               <tbody className="text-sm text-center">
                 {paginatedData.length > 0 ? filteredData.map((item, index) => (
                   <tr key={index} className="hover:bg-gray-100 transition">
-                    <td className="border border-green-500 px-2 py-1">{startIndex+index+1}</td>
-                    <td className="border border-green-500 px-2 py-1">{item.studentId || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{item.studentName || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{item.class || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{item.section || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{item.rollNo || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">₹{item.pendingAmount}</td>
-                    <td className="border border-green-500 px-2 py-1">
+                    <td className="border border-blue-500 px-2 py-1">{startIndex+index+1}</td>
+                    <td className="border border-blue-500 px-2 py-1">{item.studentId || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{item.studentName || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{item.class || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{item.section || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{item.rollNo || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">₹{item.pendingAmount}</td>
+                    <td className="border border-blue-500 px-2 py-1">
                       <button onClick={() => viewStudentDetails(item.studentId)} className="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600">View</button>
                       
                     </td>
@@ -176,35 +176,35 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
               >
                 X
               </button>
-              <h3 className="text-lg font-semibold mb-2 text-green-800">{selectedStudent.studentName} - Fee Details</h3>
-              <table className="w-full table-auto border border-green-500 mb-2">
-                <thead className="bg-green-100 text-green-800">
+              <h3 className="text-lg font-semibold mb-2 text-blue-800">{selectedStudent.studentName} - Fee Details</h3>
+              <table className="w-full table-auto border border-blue-500 mb-2">
+                <thead className="bg-blue-100 text-blue-800">
                   <tr>
-                    <th className="border border-green-500 px-2 py-1">Fee Head</th>
-                    <th className="border border-green-500 px-2 py-1">Amount</th>
-                    <th className="border border-green-500 px-2 py-1">Amount Paid</th>
-                    <th className="border border-green-500 px-2 py-1">Pending Amount</th>
+                    <th className="border border-blue-500 px-2 py-1">Fee Head</th>
+                    <th className="border border-blue-500 px-2 py-1">Amount</th>
+                    <th className="border border-blue-500 px-2 py-1">Amount Paid</th>
+                    <th className="border border-blue-500 px-2 py-1">Pending Amount</th>
                   </tr>
                 </thead>
                 <tbody>
                   {selectedStudent.feeDetails.map((f, idx) => (
-                    <tr key={idx} className="hover:bg-green-50">
-                      <td className="border border-green-500 px-2 py-1">{f.feeHead}</td>
-                      <td className="border border-green-500 px-2 py-1">₹{f.originalAmount}</td>
-                      <td className="border border-green-500 px-2 py-1">₹{f.amountPaid}</td>
-                      <td className="border border-green-500 px-2 py-1 font-semibold">₹{f.pendingAmount}</td>
+                    <tr key={idx} className="hover:bg-blue-50">
+                      <td className="border border-blue-500 px-2 py-1">{f.feeHead}</td>
+                      <td className="border border-blue-500 px-2 py-1">₹{f.originalAmount}</td>
+                      <td className="border border-blue-500 px-2 py-1">₹{f.amountPaid}</td>
+                      <td className="border border-blue-500 px-2 py-1 font-semibold">₹{f.pendingAmount}</td>
                     </tr>
                   ))}
                 </tbody>
                 <tfoot>
-                  <tr className="font-semibold bg-green-100 text-black">
-                    <td className="border border-green-500 px-2 py-1 text-right" colSpan={3}>Total Pending (All Fee Heads):</td>
-                    <td className="border border-green-500 px-2 py-1">₹{selectedStudent.feeDetails.reduce((sum, f) => sum + f.pendingAmount, 0)}</td>
+                  <tr className="font-semibold bg-blue-100 text-black">
+                    <td className="border border-blue-500 px-2 py-1 text-right" colSpan={3}>Total Pending (All Fee Heads):</td>
+                    <td className="border border-blue-500 px-2 py-1">₹{selectedStudent.feeDetails.reduce((sum, f) => sum + f.pendingAmount, 0)}</td>
                   </tr>
 
-                    <tr className="font-semibold bg-green-100 text-black">
-                    <td className="border border-green-500 px-2 py-1 text-right" colSpan={3}>Previous Pending Amount:</td>
-                    <td className="border border-green-500 px-2 py-1">₹{selectedStudent.overallPendingAmount}</td>
+                    <tr className="font-semibold bg-blue-100 text-black">
+                    <td className="border border-blue-500 px-2 py-1 text-right" colSpan={3}>Previous Pending Amount:</td>
+                    <td className="border border-blue-500 px-2 py-1">₹{selectedStudent.overallPendingAmount}</td>
                   </tr>
                 </tfoot>
               </table>

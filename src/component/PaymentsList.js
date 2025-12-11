@@ -332,10 +332,10 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
       <div className="flex-1 overflow-y-auto p-3">
         <Header />
         <div className="p-2 bg-white shadow-md rounded-md">
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
           {/* Left: Payments Title */}
-          <h2 className="text-xl font-bold text-green-800">Payments</h2>
+          <h2 className="text-xl font-bold text-blue-800">Payments</h2>
 
           {/* Right: Back, Search, Add Payment */}
           <div className="flex flex-col sm:flex-row sm:items-center gap-2 md:flex-row md:items-center md:gap-2 w-full md:w-auto">
@@ -346,8 +346,8 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
             placeholder="SEARCH BY STUDENT NAME OR RECEIPT ID"
             value={searchTerm}
             onChange={(e) => setSearchTerm(e.target.value.toUpperCase())}
-            className="flex-1 min-w-[300px] border border-green-500 rounded px-2 py-1 
-                      focus:outline-none focus:ring-2 focus:ring-green-400 
+            className="flex-1 min-w-[300px] border border-blue-500 rounded px-2 py-1 
+                      focus:outline-none focus:ring-2 focus:ring-blue-400 
                       placeholder:uppercase"
             style={{ textTransform: "uppercase" }}
           />
@@ -355,7 +355,7 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
 
             <button
               onClick={() => navigate("/PaymentsMaster")}
-              className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded font-semibold whitespace-nowrap"
+              className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded font-semibold whitespace-nowrap"
             >
               Add Payment
             </button>
@@ -363,54 +363,54 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
         </div>
       </div>
 
-<table className="w-full table-auto border border-green-600">
-  <thead className="bg-green-100 text-xs">
+<table className="w-full table-auto border border-blue-600">
+  <thead className="bg-blue-100 text-xs">
     <tr>
-      <th className="border border-green-600">SL No</th>
-      <th className="border border-green-600">PMT ID</th>
-      <th className="border border-green-600">ST ID</th>
-      <th className="border border-green-600">Session</th>
-      <th className="border border-green-600">Student</th>
-      <th className="border border-green-600">Class</th>
-      <th className="border border-green-600">Sec</th>
-      <th className="border border-green-600">Roll</th>
-      <th className="border border-green-600">Original Fee Heads</th>
-      <th className="border border-green-600">Total Amount</th>
-      <th className="border border-green-600">Fee headwise Paid</th>
-      <th className="border border-green-600">Total Paid Amount</th>
-      <th className="border border-green-600">Fee headwise Pending</th>
-      <th className="border border-green-600">Pending Amount</th>
-      <th className="border border-green-600">Date</th>
-      <th className="border border-green-600">Pay Mode</th>
-      {/* <th className="border border-green-600">Remarks</th> */}
-      <th className="border border-green-600">Collected By</th>
-      <th className="border border-green-600">Action</th>
+      <th className="border border-blue-600">SL No</th>
+      <th className="border border-blue-600">PMT ID</th>
+      <th className="border border-blue-600">ST ID</th>
+      <th className="border border-blue-600">Session</th>
+      <th className="border border-blue-600">Student</th>
+      <th className="border border-blue-600">Class</th>
+      <th className="border border-blue-600">Sec</th>
+      <th className="border border-blue-600">Roll</th>
+      <th className="border border-blue-600">Original Fee Heads</th>
+      <th className="border border-blue-600">Total Amount</th>
+      <th className="border border-blue-600">Fee headwise Paid</th>
+      <th className="border border-blue-600">Total Paid Amount</th>
+      <th className="border border-blue-600">Fee headwise Pending</th>
+      <th className="border border-blue-600">Pending Amount</th>
+      <th className="border border-blue-600">Date</th>
+      <th className="border border-blue-600">Pay Mode</th>
+      {/* <th className="border border-blue-600">Remarks</th> */}
+      <th className="border border-blue-600">Collected By</th>
+      <th className="border border-blue-600">Action</th>
     </tr>
   </thead>
   <tbody className="text-sm text-center">
     {filteredPayments.length > 0 ? (
       paginatedPayments.map((p,index) => (
         <tr key={p._id} className="hover:bg-gray-100 transition">
-          <td className="border border-green-600">{startIndex+index+1}</td>
-          <td className="border border-green-600">{p.paymentId}</td>
-          <td className="border border-green-600">{p.student}</td>
-          <td className="border border-green-600">{p.academicSession}</td>
-          <td className="border border-green-600">{getStudentName(p.student)}</td>
-          <td className="border border-green-600">{p.admitClass}</td>
-          <td className="border border-green-600">{p.section}</td>
-          <td className="border border-green-600">{p.rollNo}</td>
+          <td className="border border-blue-600">{startIndex+index+1}</td>
+          <td className="border border-blue-600">{p.paymentId}</td>
+          <td className="border border-blue-600">{p.student}</td>
+          <td className="border border-blue-600">{p.academicSession}</td>
+          <td className="border border-blue-600">{getStudentName(p.student)}</td>
+          <td className="border border-blue-600">{p.admitClass}</td>
+          <td className="border border-blue-600">{p.section}</td>
+          <td className="border border-blue-600">{p.rollNo}</td>
 
-          <td className="border border-green-600 text-left">
+          <td className="border border-blue-600 text-left">
             {p.feeDetails && p.feeDetails.length > 0
               ? p.feeDetails.map(f => `${f.feeHead}: ₹${Math.round(f.amount)}`).join(", ")
               : "-"}
           </td>
 
-          <td className="border border-green-600">
+          <td className="border border-blue-600">
             ₹{Math.round(p.totalAmount)}
           </td>
 
-     <td className="border border-green-600 text-left">
+     <td className="border border-blue-600 text-left">
           {p.feeDetails && p.feeDetails.length > 0 ? (
             <>
               {p.feeDetails
@@ -432,7 +432,7 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
         </td>
 
 {/* 
-            <td className="border border-green-600">
+            <td className="border border-blue-600">
             ₹
             {Math.round(
               p.feeDetails?.reduce(
@@ -446,8 +446,8 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
             )}
               
           </td> */}
-          <td className="border border-green-600">{p.totalPaidAmount}</td>
-          <td className="border border-green-600 text-left">
+          <td className="border border-blue-600">{p.totalPaidAmount}</td>
+          <td className="border border-blue-600 text-left">
             {p.feeDetails && p.feeDetails.length > 0
               ? p.feeDetails
                   .map(
@@ -458,12 +458,12 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
           </td>
 
         
-          <td className="border border-green-600">
+          <td className="border border-blue-600">
               {(p.totalPendingAmount || 0) + (p.overallPendingAmount || 0)}
             </td>
 
 
-                      {/* <td className="border border-green-600">
+                      {/* <td className="border border-blue-600">
                         ₹
                         {Math.round(
                           p.feeDetails?.reduce(
@@ -473,15 +473,15 @@ const paginatedPayments = filteredPayments.slice(startIndex, startIndex + perPag
                         )}
                       </td> */}
 
-                      <td className="border border-green-600">{formatDDMMYYYY(p.date)}</td>
-                      <td className="border border-green-600">{p.paymentMode}</td>
-                      {/* <td className="border border-green-600">{p.remarks || "-"}</td> */}
-                      <td className="border border-green-600">{p.collectedBy || "-"}</td>
-                      <td className="border border-green-600">
+                      <td className="border border-blue-600">{formatDDMMYYYY(p.date)}</td>
+                      <td className="border border-blue-600">{p.paymentMode}</td>
+                      {/* <td className="border border-blue-600">{p.remarks || "-"}</td> */}
+                      <td className="border border-blue-600">{p.collectedBy || "-"}</td>
+                      <td className="border border-blue-600">
                         <div className="flex justify-center gap-4">
                           <button
                             onClick={() => handlePrint(p._id)}
-                            className="text-green-600 hover:text-green-800"
+                            className="text-blue-600 hover:text-blue-800"
                           >
                             <FaPrint />
                           </button>

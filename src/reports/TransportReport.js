@@ -53,14 +53,14 @@ const TransportReport = () => {
 
         <div className="p-2 bg-white shadow-md rounded-md">
           {/* Title Bar */}
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold text-green-800">Transport Fee Report</h2>
+              <h2 className="text-xl font-bold text-blue-800">Transport Fee Report</h2>
               <div className="flex gap-2">
                 <BackButton />
                 <button
                   onClick={() => navigate("/ReportsDashboard")}
-                  className="flex items-center px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                  className="flex items-center px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                   title="Reports Dashboard"
                 >
                   <FaThLarge />
@@ -120,28 +120,28 @@ const TransportReport = () => {
 
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full table-auto border border-green-500">
-              <thead className="bg-green-100 text-sm">
+            <table className="w-full table-auto border border-blue-500">
+              <thead className="bg-blue-100 text-sm">
                 <tr>
-                  <th className="border border-green-500 px-2 py-1">Academic Session</th>
-                  <th className="border border-green-500 px-2 py-1">Distance (KM)</th>
-                  <th className="border border-green-500 px-2 py-1">No. of Students</th>
-                  <th className="border border-green-500 px-2 py-1">Total Amount (₹)</th>
+                  <th className="border border-blue-500 px-2 py-1">Academic Session</th>
+                  <th className="border border-blue-500 px-2 py-1">Distance (KM)</th>
+                  <th className="border border-blue-500 px-2 py-1">No. of Students</th>
+                  <th className="border border-blue-500 px-2 py-1">Total Amount (₹)</th>
                 </tr>
               </thead>
               <tbody className="text-sm text-center">
                 {filteredData.length > 0 ? (
                   filteredData.map((item, index) => (
                     <tr key={index} className="hover:bg-gray-100 transition">
-                      <td className="border border-green-500 px-2 py-1">{item.academicSession}</td>
-                      <td className="border border-green-500 px-2 py-1">{item.distance}</td>
-                      <td className="border border-green-500 px-2 py-1">{item.studentCount}</td>
-                      <td className="border border-green-500 px-2 py-1">₹{item.totalAmount.toFixed(2)}</td>
+                      <td className="border border-blue-500 px-2 py-1">{item.academicSession}</td>
+                      <td className="border border-blue-500 px-2 py-1">{item.distance}</td>
+                      <td className="border border-blue-500 px-2 py-1">{item.studentCount}</td>
+                      <td className="border border-blue-500 px-2 py-1">₹{item.totalAmount.toFixed(2)}</td>
                     </tr>
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="4" className="text-center py-4 text-gray-500 border border-green-500">
+                    <td colSpan="4" className="text-center py-4 text-gray-500 border border-blue-500">
                       No records found.
                     </td>
                   </tr>

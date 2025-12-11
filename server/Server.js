@@ -82,17 +82,17 @@ app.use("/api/admin", adminRoutes);
 // ===== Create Default Admin =====
 const createDefaultAdmin = async () => {
   try {
-    const adminExists = await Admin.findOne({ userId: "sixfoxtechnology12@gmail.com" });
+    const adminExists = await Admin.findOne({ userId: "school" });
     if (!adminExists) {
-      const hashedPassword = await bcrypt.hash("sixfox123", 10);
+      const hashedPassword = await bcrypt.hash("school123", 10);
       await Admin.create({
-        userId: "sixfoxtechnology12@gmail.com",
+        userId: "school",
         name: "Main Admin",
         password: hashedPassword,
         role: "Admin",
         profileImage: "",
       });
-      console.log("Default admin created → userId: sixfoxtechnology12@gmail.com | password: sixfox123");
+      console.log("Default admin created → userId: school | password: school123");
     } else {
       //console.log("Default admin already exists in database");
     }

@@ -64,14 +64,14 @@ const paginatedsessions = sessions.slice(startIndex, startIndex + perPage);
       <div className="flex-1 overflow-y-auto p-3">
         <Header/>
         <div className="p-2 bg-white shadow-md rounded-md">
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold text-green-800">Academic Sessions</h2>
+              <h2 className="text-xl font-bold text-blue-800">Academic Sessions</h2>
               <div className="flex gap-4">
                 <BackButton />
                 <button
                   onClick={() => navigate("/AcademicSessionMaster")}
-                  className="bg-green-600 hover:bg-green-700 text-white px-4 py-1 rounded font-semibold whitespace-nowrap"
+                  className="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1 rounded font-semibold whitespace-nowrap"
                 >
                   Add Session
                 </button>
@@ -79,31 +79,31 @@ const paginatedsessions = sessions.slice(startIndex, startIndex + perPage);
             </div>
           </div>
 
-          <table className="w-full table-auto border border-green-500">
-            <thead className="bg-green-100 text-sm">
+          <table className="w-full table-auto border border-blue-500">
+            <thead className="bg-blue-100 text-sm">
               <tr>
-                <th className="border border-green-500 px-2 py-1">SL No</th>
-                <th className="border border-green-500 px-2 py-1">Session ID</th>
-                <th className="border border-green-500 px-2 py-1">Year</th>
-                <th className="border border-green-500 px-2 py-1">Start Date</th>
-                <th className="border border-green-500 px-2 py-1">End Date</th>
-                <th className="border border-green-500 px-2 py-1">Action</th>
+                <th className="border border-blue-500 px-2 py-1">SL No</th>
+                <th className="border border-blue-500 px-2 py-1">Session ID</th>
+                <th className="border border-blue-500 px-2 py-1">Year</th>
+                <th className="border border-blue-500 px-2 py-1">Start Date</th>
+                <th className="border border-blue-500 px-2 py-1">End Date</th>
+                <th className="border border-blue-500 px-2 py-1">Action</th>
               </tr>
             </thead>
             <tbody className="text-sm text-center">
               {sessions.length > 0 ? (
                 paginatedsessions.map((s,index) => (
                   <tr key={s._id} className="hover:bg-gray-100 transition">
-                    <td className="border border-green-500 px-2 py-1">{startIndex+index+1}</td>
-                    <td className="border border-green-500 px-2 py-1">{s.sessionId}</td>
-                    <td className="border border-green-500 px-2 py-1">{s.year}</td>
-                    <td className="border border-green-500 px-2 py-1">
+                    <td className="border border-blue-500 px-2 py-1">{startIndex+index+1}</td>
+                    <td className="border border-blue-500 px-2 py-1">{s.sessionId}</td>
+                    <td className="border border-blue-500 px-2 py-1">{s.year}</td>
+                    <td className="border border-blue-500 px-2 py-1">
                       {new Date(s.startDate).toLocaleDateString("en-GB")}
                     </td>
-                    <td className="border border-green-500 px-2 py-1">
+                    <td className="border border-blue-500 px-2 py-1">
                       {new Date(s.endDate).toLocaleDateString("en-GB")}
                     </td>
-                    <td className="border border-green-500 px-2 py-1 text-center">
+                    <td className="border border-blue-500 px-2 py-1 text-center">
                       <div className="flex justify-center items-center gap-4">
                         <button
                           onClick={() =>

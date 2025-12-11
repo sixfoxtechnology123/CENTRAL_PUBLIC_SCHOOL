@@ -124,9 +124,9 @@ const FeeHeadsReport = () => {
 
         <div className="p-2 bg-white shadow-md rounded-md">
           {/* Title Bar with Search and Session Filter */}
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-2">
-              <h2 className="text-xl font-bold text-green-800">
+              <h2 className="text-xl font-bold text-blue-800">
                 Fee Head-Wise Summary
               </h2>
 
@@ -155,7 +155,7 @@ const FeeHeadsReport = () => {
 
                 <button
                   onClick={() => navigate("/ReportsDashboard")}
-                  className="flex-shrink-0 flex items-center px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                  className="flex-shrink-0 flex items-center px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                   title="Reports Dashboard"
                 >
                   <FaThLarge />
@@ -171,22 +171,22 @@ const FeeHeadsReport = () => {
             <div className="text-center py-4 text-red-600">{errorMsg}</div>
           ) : (
             <div className="overflow-x-auto">
-              <table className="w-full table-auto border border-green-500">
-                <thead className="bg-green-100 text-sm">
+              <table className="w-full table-auto border border-blue-500">
+                <thead className="bg-blue-100 text-sm">
                   <tr>
-                    <th className="border border-green-500 px-2 py-1">
+                    <th className="border border-blue-500 px-2 py-1">
                       Academic Session
                     </th>
-                    <th className="border border-green-500 px-2 py-1">
+                    <th className="border border-blue-500 px-2 py-1">
                       Fee Head
                     </th>
-                    <th className="border border-green-500 px-2 py-1">
+                    <th className="border border-blue-500 px-2 py-1">
                       Students Paid
                     </th>
-                    <th className="border border-green-500 px-2 py-1">
+                    <th className="border border-blue-500 px-2 py-1">
                       Amount Collected
                     </th>
-                    <th className="border border-green-500 px-2 py-1">Action</th>
+                    <th className="border border-blue-500 px-2 py-1">Action</th>
                   </tr>
                 </thead>
 
@@ -194,19 +194,19 @@ const FeeHeadsReport = () => {
                   {filteredFeeData.length > 0 ? (
                     filteredFeeData.map((item, index) => (
                       <tr key={index} className="hover:bg-gray-100 transition">
-                        <td className="border border-green-500 px-2 py-1">
+                        <td className="border border-blue-500 px-2 py-1">
                           {item.academicSession || "-"}
                         </td>
-                        <td className="border border-green-500 px-2 py-1">
+                        <td className="border border-blue-500 px-2 py-1">
                           {item.feeHead || "-"}
                         </td>
-                        <td className="border border-green-500 px-2 py-1">
+                        <td className="border border-blue-500 px-2 py-1">
                           {item.studentsPaid ?? 0}
                         </td>
-                        <td className="border border-green-500 px-2 py-1">
+                        <td className="border border-blue-500 px-2 py-1">
                           ₹{item.amountCollected ?? 0}
                         </td>
-                        <td className="border border-green-500 px-2 py-1">
+                        <td className="border border-blue-500 px-2 py-1">
                           <button
                             onClick={() => handleView(item.students)}
                             className="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -235,7 +235,7 @@ const FeeHeadsReport = () => {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-4 w-full max-w-2xl shadow-lg">
             <div className="flex justify-between items-center mb-3">
-              <h3 className="text-lg font-semibold text-green-700">
+              <h3 className="text-lg font-semibold text-blue-700">
                 Students Paid
               </h3>
               <button
@@ -269,22 +269,22 @@ const FeeHeadsReport = () => {
 
             {filteredStudents && filteredStudents.length > 0 ? (
               <div className="overflow-auto max-h-72">
-                <table className="w-full table-auto border border-green-500 text-sm">
-                  <thead className="bg-green-100">
+                <table className="w-full table-auto border border-blue-500 text-sm">
+                  <thead className="bg-blue-100">
                     <tr>
-                      <th className="border border-green-500 px-2 py-1">Sl No.</th>
-                      <th className="border border-green-500 px-2 py-1">Name</th>
-                      <th className="border border-green-500 px-2 py-1">Class</th>
-                      <th className="border border-green-500 px-2 py-1">Section</th>
+                      <th className="border border-blue-500 px-2 py-1">Sl No.</th>
+                      <th className="border border-blue-500 px-2 py-1">Name</th>
+                      <th className="border border-blue-500 px-2 py-1">Class</th>
+                      <th className="border border-blue-500 px-2 py-1">Section</th>
                     </tr>
                   </thead>
                   <tbody>
                     {filteredStudents.map((s, i) => (
                       <tr key={i} className="text-center hover:bg-gray-50">
-                        <td className="border border-green-500 px-2 py-1">{i + 1}</td>
-                        <td className="border border-green-500 px-2 py-1">{s?.name || "-"}</td>
-                        <td className="border border-green-500 px-2 py-1">{s?.class || "-"}</td>
-                        <td className="border border-green-500 px-2 py-1">{s?.section || "-"}</td>
+                        <td className="border border-blue-500 px-2 py-1">{i + 1}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s?.name || "-"}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s?.class || "-"}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s?.section || "-"}</td>
                       </tr>
                     ))}
                   </tbody>

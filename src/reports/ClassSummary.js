@@ -69,14 +69,14 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
         <Header />
 
         <div className="p-2 bg-white shadow-md rounded-md">
-          <div className="bg-green-50 border border-green-300 rounded-lg shadow-md p-2 mb-4">
+          <div className="bg-blue-50 border border-blue-300 rounded-lg shadow-md p-2 mb-4">
             <div className="flex justify-between items-center">
-              <h2 className="text-xl font-bold text-green-800">Class/Section-wise Summary</h2>
+              <h2 className="text-xl font-bold text-blue-800">Class/Section-wise Summary</h2>
               <div className="flex gap-2">
                 <BackButton />
                 <button
                   onClick={() => navigate("/ReportsDashboard")}
-                  className="flex items-center px-3 py-1 bg-green-600 text-white rounded hover:bg-green-700 transition"
+                  className="flex items-center px-3 py-1 bg-blue-600 text-white rounded hover:bg-blue-700 transition"
                   title="Reports Dashboard"
                 >
                   <FaThLarge />
@@ -139,28 +139,28 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
 
           {/* Table */}
           <div className="overflow-x-auto">
-            <table className="w-full table-auto border border-green-500">
-              <thead className="bg-green-100 text-sm">
+            <table className="w-full table-auto border border-blue-500">
+              <thead className="bg-blue-100 text-sm">
                 <tr>
-                  <th className="border border-green-500 px-2 py-1">SL No</th>
-                  <th className="border border-green-500 px-2 py-1">Class</th>
-                  <th className="border border-green-500 px-2 py-1">Section</th>
-                  <th className="border border-green-500 px-2 py-1">Session</th>
-                  <th className="border border-green-500 px-2 py-1">Students Paid</th>
-                  <th className="border border-green-500 px-2 py-1">Amount Collected</th>
-                  <th className="border border-green-500 px-2 py-1">Action</th>
+                  <th className="border border-blue-500 px-2 py-1">SL No</th>
+                  <th className="border border-blue-500 px-2 py-1">Class</th>
+                  <th className="border border-blue-500 px-2 py-1">Section</th>
+                  <th className="border border-blue-500 px-2 py-1">Session</th>
+                  <th className="border border-blue-500 px-2 py-1">Students Paid</th>
+                  <th className="border border-blue-500 px-2 py-1">Amount Collected</th>
+                  <th className="border border-blue-500 px-2 py-1">Action</th>
                 </tr>
               </thead>
               <tbody className="text-sm text-center">
                 {paginatedData.length > 0 ? filteredData.map((row, idx) => (
                   <tr key={idx} className="hover:bg-gray-100 transition">
-                    <td className="border border-green-500 px-2 py-1">{startIndex+idx+1}</td>
-                    <td className="border border-green-500 px-2 py-1">{row.className || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{row.section || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{row.session || "-"}</td>
-                    <td className="border border-green-500 px-2 py-1">{row.studentsPaid}</td>
-                    <td className="border border-green-500 px-2 py-1">₹{row.totalAmount}</td>
-                    <td className="border border-green-500 px-2 py-1">
+                    <td className="border border-blue-500 px-2 py-1">{startIndex+idx+1}</td>
+                    <td className="border border-blue-500 px-2 py-1">{row.className || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{row.section || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{row.session || "-"}</td>
+                    <td className="border border-blue-500 px-2 py-1">{row.studentsPaid}</td>
+                    <td className="border border-blue-500 px-2 py-1">₹{row.totalAmount}</td>
+                    <td className="border border-blue-500 px-2 py-1">
                       <button
                         onClick={() => setSelectedReport(row)}
                         className="px-2 py-1 text-xs bg-blue-500 text-white rounded hover:bg-blue-600"
@@ -171,7 +171,7 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
                   </tr>
                 )) : (
                   <tr>
-                    <td colSpan="6" className="text-center py-4 text-gray-500 border border-green-500">
+                    <td colSpan="6" className="text-center py-4 text-gray-500 border border-blue-500">
                       No records found
                     </td>
                   </tr>
@@ -190,37 +190,37 @@ const paginatedData = filteredData.slice(startIndex, startIndex + perPage);
           {selectedReport && (
             <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-40 z-50">
               <div className="bg-white rounded-lg shadow-lg p-5 w-3/4 max-w-2xl">
-                <h3 className="text-lg font-bold mb-3 text-green-700">
+                <h3 className="text-lg font-bold mb-3 text-blue-700">
                   Report Details ({selectedReport.className}-{selectedReport.section}, {selectedReport.session})
                 </h3>
-                <table className="w-full table-auto border border-green-500 mb-4">
-                  <thead className="bg-green-100 text-sm">
+                <table className="w-full table-auto border border-blue-500 mb-4">
+                  <thead className="bg-blue-100 text-sm">
                     <tr>
-                      <th className="border border-green-500 px-2 py-1">Session</th>
-                      <th className="border border-green-500 px-2 py-1">ID</th>
-                      <th className="border border-green-500 px-2 py-1">Name</th>
-                      <th className="border border-green-500 px-2 py-1">Class</th>
-                      <th className="border border-green-500 px-2 py-1">Section</th>
-                      <th className="border border-green-500 px-2 py-1">Roll</th>
-                      <th className="border border-green-500 px-2 py-1">Amount Paid</th>
+                      <th className="border border-blue-500 px-2 py-1">Session</th>
+                      <th className="border border-blue-500 px-2 py-1">ID</th>
+                      <th className="border border-blue-500 px-2 py-1">Name</th>
+                      <th className="border border-blue-500 px-2 py-1">Class</th>
+                      <th className="border border-blue-500 px-2 py-1">Section</th>
+                      <th className="border border-blue-500 px-2 py-1">Roll</th>
+                      <th className="border border-blue-500 px-2 py-1">Amount Paid</th>
                       
                     </tr>
                   </thead>
                   <tbody className="text-sm text-center">
                     {selectedReport.students?.length > 0 ? selectedReport.students.map((s, i) => (
                       <tr key={i} className="hover:bg-gray-50">
-                         <td className="border border-green-500 px-2 py-1">{s.session}</td>
-                        <td className="border border-green-500 px-2 py-1">{s.studentId || "-"}</td>
-                        <td className="border border-green-500 px-2 py-1">{s.name}</td>
-                        <td className="border border-green-500 px-2 py-1">{s.class}</td>
-                        <td className="border border-green-500 px-2 py-1">{s.section}</td>
-                        <td className="border border-green-500 px-2 py-1">{s.rollNo || "-"}</td>
-                        <td className="border border-green-500 px-2 py-1">₹{s.amountPaid || 0}</td>
+                         <td className="border border-blue-500 px-2 py-1">{s.session}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s.studentId || "-"}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s.name}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s.class}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s.section}</td>
+                        <td className="border border-blue-500 px-2 py-1">{s.rollNo || "-"}</td>
+                        <td className="border border-blue-500 px-2 py-1">₹{s.amountPaid || 0}</td>
                        
                       </tr>
                     )) : (
                       <tr>
-                        <td colSpan="7" className="text-gray-500 py-2 border border-green-500">
+                        <td colSpan="7" className="text-gray-500 py-2 border border-blue-500">
                           No student records found
                         </td>
                       </tr>
