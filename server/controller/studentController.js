@@ -6,7 +6,7 @@ import logActivity from "../utils/logActivity.js";
 
 //const PREFIX = "G";
 const PAD = 4;
-const START_NUM = 2291;
+const START_NUM = 2350;
 
 // ===== Generate Next Admission Number =====
 async function generateNextAdmissionNo() {
@@ -45,7 +45,7 @@ async function generateNextStudentId(session) {
   if (session) {
     const startYear = parseInt(session.split("-")[0]);
     if (!isNaN(startYear)) {
-      prefix = String.fromCharCode(65 + (startYear - 2019)); // A=2019, B=2020, etc.
+      prefix = String.fromCharCode(65 + (startYear - 2020)); // A=2019, B=2020, etc.
     }
   }
 
@@ -54,7 +54,7 @@ async function generateNextStudentId(session) {
     .sort({ _id: -1 })
     .select("studentId");
 
-  let nextNum = 2291; // start from 101
+  let nextNum = 2350; // start from 101
   if (latestStudent && latestStudent.studentId) {
     const lastNum = parseInt(latestStudent.studentId.slice(1));
     if (!isNaN(lastNum)) {

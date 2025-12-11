@@ -443,7 +443,24 @@ const handleSubmit = async (e) => {
       <div className="flex-1 overflow-y-auto p-3">
         <Header />
         <div className="p-2 bg-white shadow-md rounded-md">
-          <div className="flex justify-between items-center mb-2 ">
+         <div className="flex items-center font-semibold gap-2 border-b border-gray-300 mb-4 pb-2 flex-wrap">
+          {["Student Information", "Family information", "Photo Upload"].map((s, i) => (
+            <React.Fragment key={i}>
+              <div
+                className={`cursor-pointer px-3 py-0 rounded ${
+                  step === i + 1 ? "bg-blue-600 font-semibold text-white" : "text-black hover:text-blue-600"
+                }`}
+                onClick={() => setStep(i + 1)}
+              >
+                {s}
+              </div>
+              {i < 2 && (
+                <span className="text-gray-800 select-none">→</span>
+              )}
+            </React.Fragment>
+          ))}
+        </div>
+        <div className="flex justify-between items-center mb-2 ">
             <h2 className="text-xl sm:text-xl font-bold text-center text-white bg-gray-800 py-1 px-3 rounded flex-1">
               {step === 1
                 ? "Student Information"
@@ -513,7 +530,7 @@ const handleSubmit = async (e) => {
                         </label>
 
 
-                        {/* Academic Session */}
+              {/* Academic Session */}
               <label>
                 Academic Session
                 <select
@@ -525,21 +542,29 @@ const handleSubmit = async (e) => {
                     setStudentData((prev) => ({ ...prev, academicSession: selected }));
                     localStorage.setItem("selectedAcademicSession", selected);
 
-                    //  Only change student ID for NEW ADMISSION
                     if (admissionType === "new admission") {
-                      fetchStudentIdBySession(selected); // send to backend immediately
+                      fetchStudentIdBySession(selected);
                     }
                   }}
                   required
                 >
                   <option value="">--Select Academic Session--</option>
-                  {academicSessions.map((session) => (
-                    <option key={session._id} value={session.year}>
-                      {session.year}
-                    </option>
-                  ))}
+
+                  {academicSessions
+                    .sort((a, b) => {
+                      const startA = parseInt(a.year.split("-")[0]);
+                      const startB = parseInt(b.year.split("-")[0]);
+                      return startA - startB;
+                    })
+                    .map((session) => (
+                      <option key={session._id} value={session.year}>
+                        {session.year}
+                      </option>
+                    ))}
+
                 </select>
               </label>
+
 
               {/* Student ID */}
               <label>
