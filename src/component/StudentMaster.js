@@ -400,10 +400,39 @@ useEffect(() => {
     }));
   };
 
-  const handleNext = (e) => {
-    e.preventDefault();
-    setStep(2);
-  };
+const handleNext = async (e) => {
+  e.preventDefault();
+
+  try {
+    const token = localStorage.getItem("token");
+
+    if (isEditMode) {
+      // UPDATE EXISTING
+      await axios.put(
+        `http://localhost:5000/api/students/update/${studentData.admissionNo}`,
+        { ...studentData, admissionType },
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+    } else {
+      // CREATE NEW
+      const res = await axios.post(
+        "http://localhost:5000/api/students",
+        studentData,
+        { headers: { Authorization: `Bearer ${token}` } }
+      );
+
+      // when first time saved, mark form as edit mode
+      setIsEditMode(true);
+    }
+
+    // move to next step after save
+    setStep(step + 1);
+
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();
@@ -1121,7 +1150,7 @@ const handleSubmit = async (e) => {
 
           {/* --------- STEP 2 --------- */}
           {step === 2 && (
-            <form onSubmit={handleSubmit} className="grid grid-cols-1 gap-4">
+            <form onSubmit={handleNext} className="grid grid-cols-1 gap-4">
               <div className="grid grid-cols-1 sm:grid-cols-4 gap-2">
                 <label>
                   Father's Name
@@ -1337,8 +1366,8 @@ const handleSubmit = async (e) => {
                   Back
                 </button>
              <button
-              type="button"
-              onClick={() => setStep(3)}
+              type="submit"
+              // onClick={() => setStep(3)}
               className="px-6 py-0 rounded text-white font-semibold bg-gray-800 hover:bg-gray-950 whitespace-nowrap"
             >
               Save & Next
